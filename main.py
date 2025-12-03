@@ -70,6 +70,69 @@ c.print_circonference()
 c.print_aire()
 
 
+import random
+
+
+class Hero:
+
+
+   def __init__(self, vie, attaque, defense, nom, nom2, force):
+       self.vie = vie
+       self.attaque = attaque
+       self.defense = defense
+       self.nom = nom
+       self.nom2 = nom2
+       self.force = force
+
+
+
+
+   def calcul_dommage(self):
+       dommage_donnee = random.randint(1, 6) + self.attaque
+       dommage_recu = max(0, dommage_donnee - self.defense)
+       self.vie -= dommage_recu
+       print(f"{self.nom} attaque {self.nom2}. Dégâts infligés: {dommage_recu}. point de vie {self.nom}: {self.vie}, force = {self.force} ")
+
+
+   def est_vivant(self):
+       return self.vie > 0
+
+
+
+
+
+hero_un = Hero(vie=20, attaque=15, defense=2, nom='Hero 1',nom2= 'Hero 2', force = random.randint(1,20))
+hero_deux = Hero(vie=25, attaque=10, defense=3, nom='Hero 1',nom2= 'hero 2', force = random.randint(1,20))
+
+
+print(" Début du combat ")
+hero_un.calcul_dommage()
+print(f"Statut Hero 1: {'Vivant' if hero_un.est_vivant() else 'Mort'}")
+print(f"Statut Hero 2: {'Vivant' if hero_deux.est_vivant() else 'Mort'}")
+
+
+class caracteristique:
+    force = random.randint(1, 20)
+    dextérité = random.randint(1, 20)
+    constitution = random.randint(1, 20)
+    intelligence = random.randint(1, 20)
+    sagesse = random.randint(1, 20)
+    charisme = random.randint(1, 20)
+
+C = caracteristique()
+
+print(f'force:{C.force} ')
+print(f'dextérité:{C.dextérité} ')
+print(f'constitution:{C.constitution} ')
+print(f'intelligence:{C.intelligence} ')
+print(f'sagesse:{C.sagesse} ')
+print(f'charisme:{C.charisme} ')
+
+
+
+
+
+
 
 
 
