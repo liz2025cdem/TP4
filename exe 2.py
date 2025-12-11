@@ -39,17 +39,20 @@ print(f'espece de NPC est: {C.espece} ')
 print(f'le pv de NPC est: {C.pv} ')
 print(f'le metier de NPC est: {C.metier} ')
 
+
+
+
 class kabold(NPC):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, force, agilité, constitution, intelligence, sagesse, charisme, classe_armure, nom, race, espece, pv, metier ):
+        super().__init__(force, agilité, constitution, intelligence, sagesse, charisme, classe_armure, nom, race, espece, pv, metier )
 
-
+        self.receive_damgage = random.randint(1, 6)
 
 
 K = kabold(force = random.randint(4, 24), agilité = random.randint(4, 24), constitution = random.randint(4, 24),
          intelligence = random.randint(4, 24), sagesse = random.randint(4, 24), charisme=  random.randint(4, 24),
-         classe_armure = random.randint(1,12), nom = input('Ecris ton nom'), race = input('Entrer votre race'),
-         espece = input('Entrer votre espece'), pv = random.randint(1,20), metier = input('Entrer votre metier'))
+         classe_armure = random.randint(1,12), nom = print('Kabold 1'), race = print('Kabold'),
+         espece = print('Kabold'), pv = random.randint(1,20), metier = print('Monstre'))
 
 
 
