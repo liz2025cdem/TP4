@@ -1,3 +1,17 @@
+class StringFoo:
+    def __init__(self):
+        self.message = 'Allo Monde'
+
+    def set_string(self, message):
+        self.message = message
+
+    def print_string(self):
+        print(self.message.upper)
+
+
+
+
+
 from math import pi
 class Rectangle:
     def __init__(self, longueur, largeur):
