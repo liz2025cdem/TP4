@@ -18,9 +18,6 @@ class NPC:
        self.pv = random.randint(1, 20)
 
 
-
-
-
    def calculer_habilete(self):
        # 1. On roule 4 dés à 6 faces
        des = []
@@ -28,18 +25,17 @@ class NPC:
            des.append(random.randint(1, 6))
 
 
-       # 2. On trie les dés du plus petit au plus grand
+       # 2. On classe les dés en ordre croissant
        des.sort()
 
 
        # 3. On ignore le premier (le plus petit) et on additionne les 3 autres
-       # des[1:] signifie : prendre de l'index 1 jusqu'à la fin
        somme_3_meilleurs = sum(des[1:])
        return somme_3_meilleurs
 
 
    def afficher_caracteristiques(self):
-       print(f"\n caracteristiques de {self.nom} ---")
+       print(f"\n caracteristiques de {self.nom} ")
        print(f"Métier: {self.metier} | Race: {self.race}")
        print(f"Force: {self.force}")
        print(f"Agilité: {self.agilite}")
@@ -53,7 +49,7 @@ class NPC:
 
    def subir_dommage(self, dommage):
        self.pv -= dommage
-       print(f"{self.nom} subit {dommage} points de dégâts! PV restants: {self.pv}")
+       print(f"{self.nom} subit {dommage} points de dégâts! point de vie restants: {self.pv}")
 
 
 
@@ -70,10 +66,10 @@ class Kobold(NPC):
        elif de20 == 1:
            print("Échec critique...")
        elif de20 >= cible.classe_armure:
-           print(f"Touche! (Jet: {de20} >= CA: {cible.classe_armure})")
+           print(f"Touche! (attaque: {de20} >= classe armure: {cible.classe_armure})")
            cible.subir_dommage(random.randint(1, 6))
        else:
-           print(f"Manqué! (Jet: {de20})")
+           print(f"Manqué! (attaque: {de20})")
 
 
 
@@ -90,10 +86,10 @@ class Heros(NPC):
        elif de20 == 1:
            print("Attaque ratée!")
        elif de20 >= cible.classe_armure:
-           print(f"Réussite! (Jet: {de20} >= CA: {cible.classe_armure})")
+           print(f"Réussite! (attaque: {de20} >= classe armure: {cible.classe_armure})")
            cible.subir_dommage(random.randint(1, 6))
        else:
-           print(f"L'attaque a échoué (Jet: {de20})")
+           print(f"L'attaque a échoué (attaque: {de20})")
 
 
 
