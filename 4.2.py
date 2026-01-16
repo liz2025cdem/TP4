@@ -93,12 +93,12 @@ class Heros(NPC):
 
 
 
-# Personalisation d'un héros et d'un monstre
+# les infos de l'héros et le monstre
 joueur = Heros("Valiant", "Humain", "homo-sapien", "Guerrier")
 monstre = Kobold("Rask", "Kobold", "Monstre", "Voleur")
 
 
-# Affichage des stats générées avec les 3 meilleurs dés
+# Affichage des stats des caracteristiques
 joueur.afficher_caracteristiques()
 monstre.afficher_caracteristiques()
 
