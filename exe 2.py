@@ -2,20 +2,33 @@ import random
 
 
 class NPC:
-    def __init__(self, force, agilité, constitution, intelligence, sagesse, charisme, classe_armure, nom, race, espece, pv, metier):
+    def __init__(self, nom, race, espece, pv, metier):
 
-        self.force =force
-        self.agilité = agilité
-        self.constitution = constitution
-        self.intelligence = intelligence
-        self.sagesse = sagesse
-        self.charisme = charisme
-        self.classe_armure = classe_armure
+        self.force = self.calcul_habilité
+        self.agilité = self.calcul_habilité
+        self.constitution = self.calcul_habilité
+        self.intelligence = self.calcul_habilité
+        self.sagesse = self.calcul_habilité
+        self.charisme = self.calcul_habilité
+        self.classe_armure = self.calcul_habilité
         self.nom = nom
         self.race = race
         self.espece = espece
         self.pv = pv
         self.metier = metier
+
+    def calcul_habilité(self):
+
+        dés = []
+
+        for i in range(4):
+            dés.append(1,6)
+
+
+        dés.sort()
+       somme_3_meilleurs = sum
+
+
 
 
 

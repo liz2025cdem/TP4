@@ -35,7 +35,7 @@ class NPC:
 
 
    def afficher_caracteristiques(self):
-       print(f"\n caracteristiques de {self.nom} ")
+       print(f"\n carac de {self.nom} ")
        print(f"Métier: {self.metier} | Race: {self.race}")
        print(f"Force: {self.force}")
        print(f"Agilité: {self.agilite}")
@@ -94,8 +94,8 @@ class Heros(NPC):
 
 
 # les infos de l'héros et le monstre
-joueur = Heros("Valiant", "Humain", "homo-sapien", "Guerrier")
-monstre = Kobold("Rask", "Kobold", "Monstre", "Voleur")
+joueur = Heros("Kobold 1", "Humain", "homo-sapien", "Guerrier")
+monstre = Kobold("Le brave soldat 1", "Kobold", "Monstre", "Voleur")
 
 
 # Affichage des stats des caracteristiques
