@@ -136,10 +136,10 @@ class Kobold(NPC):
         elif dé_de_20 == 1:
             print("Échec critique...")
         elif dé_de_20 >= cible.classe_armure:
-            print(f"Touche! (Jet: {dé_de_20} >= CA: {cible.classe_armure})")
+            print(f"Touche! (attaque: {dé_de_20} >= CA: {cible.classe_armure})")
             cible.subir_dommage(random.randint(1, 6))
         else:
-            print(f"Manqué! (Jet: {dé_de_20})")
+            print(f"Manqué! (attaque: {dé_de_20})")
 
 
 class Hero(NPC):
@@ -157,10 +157,10 @@ class Hero(NPC):
         elif dé_de_20 == 1:
             print("Attaque ratée!")
         elif dé_de_20 >= cible.classe_armure:
-            print(f"Réussite! (Jet: {dé_de_20} >= CA: {cible.classe_armure})")
+            print(f"Réussite! (attaque: {dé_de_20} >= CA: {cible.classe_armure})")
             cible.subir_dommage(random.randint(1, 6))
         else:
-            print(f"L'attaque a échoué (Jet: {dé_de_20})")
+            print(f"L'attaque a échoué (attaque: {dé_de_20})")
 
         self.sac = sac_a_dos()
 
