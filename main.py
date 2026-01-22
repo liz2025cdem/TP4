@@ -1,16 +1,15 @@
 class StringFoo:
-    def __init__(self):
-        self.message = 'Allo Monde'
-
-    def set_string(self, message):
+    def __init__(self, message):
         self.message = message
 
+    def set_string(self):
+        self.message
     def print_string(self):
-        print(self.message.upper)
+        print(self.message.upper())
 
 
-
-
+s = StringFoo('allo monde')
+s.print_string()
 
 from math import pi
 class Rectangle:
@@ -30,21 +29,6 @@ class Rectangle:
 
 r = Rectangle(4, 5)
 r.print_aire()
-
-class StringFoo:
-    def __init__(self, message):
-        self.message = message
-
-    def set_string(self):
-        self.message
-    def print_string(self):
-        print(self.message)
-
-
-s = StringFoo('allo')
-s.print_string()
-
-
 
 class Cercle:
 

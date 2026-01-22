@@ -19,17 +19,17 @@ class NPC:
 
 
    def calculer_habilete(self):
-       # 1. On roule 4 dés à 6 faces
+
        des = []
        for i in range(4):
            des.append(random.randint(1, 6))
 
 
-       # 2. On classe les dés en ordre croissant
+
        des.sort()
 
 
-       # 3. On ignore le premier (le plus petit) et on additionne les 3 autres
+
        somme_3_meilleurs = sum(des[1:])
        return somme_3_meilleurs
 
@@ -93,16 +93,16 @@ class Heros(NPC):
 
 
 
-# les infos de l'héros et le monstre
+
 joueur = Heros("Kobold 1", "Humain", "homo-sapien", "Guerrier")
 monstre = Kobold("Le brave soldat 1", "Kobold", "Monstre", "Voleur")
 
 
-# Affichage des stats des caracteristiques
+
 joueur.afficher_caracteristiques()
 monstre.afficher_caracteristiques()
 
 
-# Simulation d'un tour de combat
+
 joueur.attaquer(monstre)
 
