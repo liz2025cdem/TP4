@@ -44,7 +44,7 @@ class sac_a_dos:
                 return
 
 
-        print("Erreur : L'item n'est pas dans le sac!")
+        print("Erreur : L'objet n'est pas dans le sac!")
 
     def voir_contenu(self):
         print("\n contenu du sac ")
@@ -128,18 +128,18 @@ class Kobold(NPC):
 
     def attaquer(self, cible):
         print(f"\nLe Kobold {self.nom} attaque {cible.nom}!")
-        de20 = random.randint(1, 20)
+        dé_de_20 = random.randint(1, 20)
 
-        if de20 == 20:
+        if dé_de_20 == 20:
             print("Critique!")
             cible.subir_dommage(random.randint(1, 8))
-        elif de20 == 1:
+        elif dé_de_20 == 1:
             print("Échec critique...")
-        elif de20 >= cible.classe_armure:
-            print(f"Touche! (Jet: {de20} >= CA: {cible.classe_armure})")
+        elif dé_de_20 >= cible.classe_armure:
+            print(f"Touche! (Jet: {dé_de_20} >= CA: {cible.classe_armure})")
             cible.subir_dommage(random.randint(1, 6))
         else:
-            print(f"Manqué! (Jet: {de20})")
+            print(f"Manqué! (Jet: {dé_de_20})")
 
 
 class Hero(NPC):
@@ -149,18 +149,18 @@ class Hero(NPC):
 
     def attaquer(self, cible):
         print(f"\nLe Héros {self.nom} attaque {cible.nom}!")
-        de20 = random.randint(1, 20)
+        dé_de_20 = random.randint(1, 20)
 
-        if de20 == 20:
+        if dé_de_20 == 20:
             print("Attaque critique!")
             cible.subir_dommage(random.randint(1, 8))
-        elif de20 == 1:
+        elif dé_de_20 == 1:
             print("Attaque ratée!")
-        elif de20 >= cible.classe_armure:
-            print(f"Réussite! (Jet: {de20} >= CA: {cible.classe_armure})")
+        elif dé_de_20 >= cible.classe_armure:
+            print(f"Réussite! (Jet: {dé_de_20} >= CA: {cible.classe_armure})")
             cible.subir_dommage(random.randint(1, 6))
         else:
-            print(f"L'attaque a échoué (Jet: {de20})")
+            print(f"L'attaque a échoué (Jet: {dé_de_20})")
 
         self.sac = sac_a_dos()
 
@@ -185,17 +185,14 @@ else:
 
 joueur.sac.ajouter_objet(item("Or", 10))
 
-
 joueur.sac.ajouter_objet(item("Or", 5))
+
+joueur.sac.ajouter_objet(item("Argent", 500))
 
 joueur.sac.ajouter_objet(item("Potion", 1))
 
-
 joueur.sac.voir_contenu()
-
 
 joueur.sac.retirer_objet("Or", 15)
 
-
 joueur.sac.voir_contenu()
-

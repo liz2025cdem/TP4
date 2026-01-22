@@ -57,19 +57,19 @@ class NPC:
 class Kobold(NPC):
    def attaquer(self, cible):
        print(f"\nLe Kobold {self.nom} attaque {cible.nom}!")
-       de20 = random.randint(1, 20)
+       dé_de_20 = random.randint(1, 20)
 
 
-       if de20 == 20:
+       if dé_de_20 == 20:
            print("Critique!")
            cible.subir_dommage(random.randint(1, 8))
-       elif de20 == 1:
+       elif dé_de_20 == 1:
            print("Échec critique...")
-       elif de20 >= cible.classe_armure:
-           print(f"Touche! (attaque: {de20} >= classe armure: {cible.classe_armure})")
+       elif dé_de_20 >= cible.classe_armure:
+           print(f"Touche! (attaque: {dé_de_20} >= classe armure: {cible.classe_armure})")
            cible.subir_dommage(random.randint(1, 6))
        else:
-           print(f"Manqué! (attaque: {de20})")
+           print(f"Manqué! (attaque: {dé_de_20})")
 
 
 
@@ -77,19 +77,19 @@ class Kobold(NPC):
 class Heros(NPC):
    def attaquer(self, cible):
        print(f"\nLe Héros {self.nom} attaque {cible.nom}!")
-       de20 = random.randint(1, 20)
+       dé_de_20 = random.randint(1, 20)
 
 
-       if de20 == 20:
-           print("Attaque critique!")
+       if dé_de_20 == 20:
+           print("attaque critique!")
            cible.subir_dommage(random.randint(1, 8))
-       elif de20 == 1:
-           print("Attaque ratée!")
-       elif de20 >= cible.classe_armure:
-           print(f"Réussite! (attaque: {de20} >= classe armure: {cible.classe_armure})")
+       elif dé_de_20 == 1:
+           print("attaque ratée!")
+       elif dé_de_20 >= cible.classe_armure:
+           print(f"réussite! (attaque: {dé_de_20} est plus grand que la classe armure: {cible.classe_armure})")
            cible.subir_dommage(random.randint(1, 6))
        else:
-           print(f"L'attaque a échoué (attaque: {de20})")
+           print(f"L'attaque a échoué (attaque: {dé_de_20})")
 
 
 
@@ -97,12 +97,8 @@ class Heros(NPC):
 joueur = Heros("Kobold 1", "Humain", "homo-sapien", "Guerrier")
 monstre = Kobold("Le brave soldat 1", "Kobold", "Monstre", "Voleur")
 
-
-
 joueur.afficher_caracteristiques()
 monstre.afficher_caracteristiques()
-
-
 
 joueur.attaquer(monstre)
 

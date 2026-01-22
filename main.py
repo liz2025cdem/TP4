@@ -99,8 +99,8 @@ class Hero:
 
 
 
-hero_un = Hero(vie=20, attaque=15, defense=2, nom='Hero 1',nom2= 'Hero 2', force = random.randint(1,20))
-hero_deux = Hero(vie=25, attaque=10, defense=3, nom='Hero 1',nom2= 'hero 2', force = random.randint(1,20))
+hero_un = Hero(vie=random.randint(2,20), attaque=random.randint(1,6), defense=random.randint(1,6), nom='Hero 1',nom2= 'Hero 2', force = random.randint(1,20))
+hero_deux = Hero(vie=random.randint(2,20), attaque=random.randint(1,6), defense=random.randint(1,6), nom='Hero 1',nom2= 'hero 2', force = random.randint(1,20))
 
 
 print(" Début du combat ")
