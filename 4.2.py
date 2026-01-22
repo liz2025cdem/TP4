@@ -1,4 +1,13 @@
+"""
+une exercice pour créé un npc, un hero et un kobold pendant le cours Activité TEchnologie.(4.2)
+Par: Zihao Li
+groupe 401
+"""
+
+
 import random
+
+
 
 class NPC:
    def __init__(self, nom, race, espece, metier):
@@ -64,9 +73,9 @@ class Kobold(NPC):
            print("Critique!")
            cible.subir_dommage(random.randint(1, 8))
        elif dé_de_20 == 1:
-           print("Échec critique...")
+           print("Échec critique")
        elif dé_de_20 >= cible.classe_armure:
-           print(f"Touche! (attaque: {dé_de_20} >= classe armure: {cible.classe_armure})")
+           print(f"Touche! (attaque: {dé_de_20} plus grand que la classe armure: {cible.classe_armure})")
            cible.subir_dommage(random.randint(1, 6))
        else:
            print(f"Manqué! (attaque: {dé_de_20})")
@@ -94,11 +103,11 @@ class Heros(NPC):
 
 
 
-joueur = Heros("Kobold 1", "Humain", "homo-sapien", "Guerrier")
-monstre = Kobold("Le brave soldat 1", "Kobold", "Monstre", "Voleur")
+joueur = Heros("soldat 1", "Humain", "homo-sapien", "Guerrier")
+monstre = Kobold("Kobold 1", "Kobold", "Monstre", "Voleur")
 
 joueur.afficher_caracteristiques()
 monstre.afficher_caracteristiques()
 
 joueur.attaquer(monstre)
-
+monstre.attaquer(joueur)

@@ -1,3 +1,9 @@
+"""
+une exercice pour pratiquer la fonction sac a dos et alignment pour le cours Activité TEchnologie.(4.3)
+Par: Zihao Li
+groupe 401
+"""
+
 from enum import Enum
 import random
 from dataclasses import dataclass
@@ -134,9 +140,9 @@ class Kobold(NPC):
             print("Critique!")
             cible.subir_dommage(random.randint(1, 8))
         elif dé_de_20 == 1:
-            print("Échec critique...")
+            print("Échec critique")
         elif dé_de_20 >= cible.classe_armure:
-            print(f"Touche! (attaque: {dé_de_20} >= CA: {cible.classe_armure})")
+            print(f"Touche! (attaque: {dé_de_20} plus grand que la classe armure: {cible.classe_armure})")
             cible.subir_dommage(random.randint(1, 6))
         else:
             print(f"Manqué! (attaque: {dé_de_20})")
@@ -169,7 +175,7 @@ monstre = Kobold("Kobold 1", "Kobold", "Monstre", "Voleur")
 monstre.afficher_caracteristiques()
 print(f"{monstre.alignement}")
 
-joueur = Hero("Le brave soldat 1", "Humain", "Humanoïde", "Guerrier")
+joueur = Hero("soldat 1", "Humain", "Humanoïde", "Guerrier")
 joueur.afficher_caracteristiques()
 print(f"{joueur.alignement}")
 

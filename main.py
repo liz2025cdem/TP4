@@ -1,3 +1,9 @@
+"""
+une exercice qui contient divers petits pratiques pendant le cours Activité TEchnologie.(4.1)
+Par: Zihao Li
+groupe 401
+"""
+
 class StringFoo:
     def __init__(self, message):
         self.message = message
